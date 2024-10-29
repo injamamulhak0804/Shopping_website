@@ -6,11 +6,22 @@ import Shop from "./components/Shop"
 import Card from "./components/Card"
 import { Provider } from "react-redux"
 import appStore from "./Redux/appStore"
+import { Toaster } from 'react-hot-toast'
 
 function App() {
   return (
     <>
     <Provider store={appStore}>
+    <Toaster
+			position="bottot-center"
+			reverseOrder={false}
+			gutter={30}
+			containerClassName="toaster-container"
+			toastOptions={{
+				className: "toaster-toast",
+				duration: 1500,
+			}}
+		/>
       <div className="max-w-[850px] mx-auto">
         <Header />
         <Routes>

@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <>
         <div className='flex items-center mt-10'>
-            <img src={IMG} className='w-56' alt="" />
+            <img src={IMG} className='w-56 hidden md:block' alt="" />
             <div className='flex flex-col w-fit items-center'>
                 <img src={IMG1} className='w-[69%]' alt="" />
                 <div className='py-5 text-center'>
@@ -22,19 +22,22 @@ const Hero = () => {
                 <h1 className='font-poppins text-8xl text-center text-transparent text-stroke'>SALE</h1>
                 <p className='font-poppins text-center text-xs mb-2'>NEW COLLECTION</p>
                 <Link to="/shop">
-                  <button className='px-3 py-2 bg-black text-white rounded-lg text-xs'>SHOP NOW</button>
+                  <button className='px-4 font-poppins py-2 bg-black text-white rounded-lg text-xs'>SHOP NOW</button>
                 </Link>
                 </div>
-                <img src={IMG2} className='w-[69%]' alt="" />
+                <img src={IMG2} className='w-[69%] ' alt="" />
             </div>
-            <img src={IMG3} className='w-56' alt="" />
+            <img src={IMG3} className='w-56 hidden md:block' alt="" />
         </div>
-        <div className='flex items-center gap-10'>
+        <div className='relative flex overflow-x-hidden'>
+        <div className='py-12 flex items-center gap-x-24 animate-marquee whitespace-nowrap'>
             <img src={LOGO} className='w-40' alt="" />  
             <img src={LOGO2} className='w-40' alt="" />  
             <img src={LOGO3} className='w-40' alt="" />  
             <img src={LOGO4} className='w-40' alt="" />  
         </div>
+        </div>
+
 
         <section className='pt-10'>
           <div className='text-center'>
@@ -42,7 +45,7 @@ const Hero = () => {
             <p className='font-poppins text-[#484848] opacity-55 text-xs'>Explore stylish clothing and accessories that elevate your everyday look. Whether you’re after casual comfort or elegant evening wear, our new pieces are designed to make a statement.</p>
           </div>
           <div className='flex flex-col items-center gap-y-8'>
-            <div className='pt-10 flex flex-wrap justify-between gap-y-10'>
+            <div className='pt-10 flex flex-wrap items-center justify-center md:justify-between gap-y-10'>
               {
                 filterWomenData.map(data=> <ShowCart key={data.id} data={data} />)
               }

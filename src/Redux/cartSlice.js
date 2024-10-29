@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import toast from "react-hot-toast";
 
 const cartSlice = createSlice({
     name: "cart",
@@ -7,7 +8,14 @@ const cartSlice = createSlice({
     },
     reducers:{
         addToCart: (state, action)=>{
-            state.items.push(action.payload.item)
+            const newItem = action.payload.item;
+
+            const isDuplicate = state.items.some(item => item[0].id === newItem[0].id);
+            if (!isDuplicate) {
+                state.items.push(newItem);
+            }else{
+                toast.error("Item Already Added")
+            }
         },
         removeCart: (state, action)=> { 
             state.items.splice(action.payload, 1)

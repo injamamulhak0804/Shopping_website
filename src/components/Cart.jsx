@@ -2,11 +2,13 @@ import React from 'react'
 import { STAR } from '../utils/constant'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../Redux/cartSlice'
+import toast from 'react-hot-toast'
 
 const Cart = ({data}) => {
     const dispatch = useDispatch()
     const {title, price, image} = data
     const handleClick = (item)=>{
+      toast.success("Item Added successfully");
       dispatch(addToCart({item: [item, 1]}))
     }
   return (

@@ -7,7 +7,7 @@ const Footer = () => {
     <>
         <div className='bg-[#f0f0f0]'>
         <div className='flex mt-20  items-center p-20'>
-            <img className='w-[25%] object-cover' src={FOOTERIMG1} alt="" />
+            <img className='w-[25%] object-cover hidden md:block' src={FOOTERIMG1} alt="" />
             <div>
                 <div className='shadow-lg p-5'>
                     <h2 className='font-volkhov text-center text-[#484848] text-2xl my-5'>Subscribe To Our Newsletter</h2>
@@ -16,14 +16,14 @@ const Footer = () => {
                 </div>
                 <div className='pt-5'><Button text="Subscribe Now" /></div>
             </div>
-            <img className='w-[23%] object-cover' src={FOOTERIMG2} alt="" />
+            <img className='w-[23%] object-cover hidden md:block' src={FOOTERIMG2} alt="" />
         </div>
         <div className='h-[2px] bg-white w-[95%] mb-5 rounded-2xl mx-auto'></div>
         <div className='bg-[#f0f0f0]'>
-            <div className='flex justify-between px-10'>
+            <div className='flex flex-col md:flex-row  justify-between px-10'>
                 <div className='font-volkhov text-xl'>BrowserBuzz</div>
                 <div>
-                    <ul className='font-poppins items-center opacity-50 flex gap-7 text-xs'>
+                    <ul className='font-poppins items-start md:flex-row md:p-0 pt-10 opacity-50 flex flex-col gap-7 text-xs'>
                         <li>Support Center</li>
                         <li>Invoicing</li>
                         <li>Contract</li>

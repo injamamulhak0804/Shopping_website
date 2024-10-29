@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { data } from '../utils/product'
 import Cart from './Cart'
-import { INSTA } from '../utils/helper'
+import { INSTA } from '../utils/Helper'
 
 const Shop = () => {
   return (
@@ -14,7 +14,7 @@ const Shop = () => {
                 <span className='mx-2'>&gt;</span>
                 <Link to="/shop">Fashion</Link>
             </div>
-            <div className='flex flex-wrap justify-start gap-10 mt-20'>
+            <div className='flex flex-wrap md:justify-start justify-center gap-10 mt-20'>
                 {
                     data.map(item => <Cart key={item.id} data={item}/>)
                 }

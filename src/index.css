@@ -3,3 +3,83 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.toaster-container {
+    height: 50px;
+}
+
+.toaster-toast {
+    color: #fff !important;
+    min-width: 200px !important;
+    background: #2e324a 
+    !important;
+}
+
+.pay-now {
+    margin: 5px 0px;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #60B246;
+    color: white;
+    box-shadow: 0px 0px 5px #bbb;
+    white-space: nowrap;
+    font-weight: 600;
+    height: 40px;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.cart-empty,
+.unservice-page,
+.res-not-page {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    background-color: #f2f6fc;
+    text-align: center;
+}
+
+.cart-empty {
+    width: 100%;
+}
+
+.cart-empty img,
+.unservice-page img,
+.res-not-page img {
+    width: 50%;
+    max-height: 50%;
+    object-fit: contain;
+}
+
+.cart-empty a,
+.res-not-page a {
+    text-decoration: none;
+    color: #000;
+}
+
+.cart-empty a button,
+.res-not-page button {
+    font-weight: 700;
+    background-color: #ff6600;
+    box-shadow: 0px 0px 10px #ff6600;
+    height: 40px;
+    padding: 0px 15px;
+    margin-top: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 30px;
+}
