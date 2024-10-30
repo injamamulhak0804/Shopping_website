@@ -12,7 +12,7 @@
 # Is there is any Developer to Contribute 👇👇🚀
 - Need to Do :
     - Write a test case(jest):
-            - unit testing
-            - integration testing
+        - unit testing
+        - integration testing
     - Add more Products
     - Add animation
