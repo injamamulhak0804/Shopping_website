@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const cartData = useSelector(store=> store.cart.items)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 
 
   const toggleMenu = () => {
     setIsMenuOpen(prevState => !prevState);
   };
   
   const handleClick = (e) =>{
-    // e.preventDefault()
     setIsMenuOpen(false)
   }
   
@@ -33,8 +33,9 @@ const Header = () => {
                 <Link onClick={handleClick} to="/">Home</Link>
                 <Link onClick={handleClick} to="/shop">Shop</Link>
                 <Link onClick={handleClick} to="/cart">Cart ({cartData.length})</Link>
-                <li>sigin</li>
-                <button className='px-4 py-2 bg-black text-white text-xs font-extralight rounded-lg'>Sign Up</button>
+                {/* <Link to="/login">Login</Link> */}
+                <Link to="/signup"><button className='px-4 py-2 bg-black text-white text-xs font-extralight rounded-lg'>Sign Up</button></Link>
+                
             </ul>
         </div>
     </div>

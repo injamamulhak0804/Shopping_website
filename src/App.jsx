@@ -7,6 +7,8 @@ import Card from "./components/Card"
 import { Provider } from "react-redux"
 import appStore from "./Redux/appStore"
 import { Toaster } from 'react-hot-toast'
+import Login from "./components/Login"
+import SignUp from "./components/SignUp"
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           <Route path="/" element={<Hero/>} />
           <Route path="/shop" element={<Shop/>} />
           <Route path="/cart" element={<Card/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/signup" element={<SignUp/>} />
         </Routes>
       </div>
       <Footer/>
