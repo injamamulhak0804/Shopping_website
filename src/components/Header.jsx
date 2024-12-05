@@ -4,7 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const Header = () => {
   const cartData = useSelector(store=> store.cart.items)
+  const {userName} = useSelector(store=> store.user)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
  
 
   const toggleMenu = () => {
@@ -34,7 +36,15 @@ const Header = () => {
                 <Link onClick={handleClick} to="/shop">Shop</Link>
                 <Link onClick={handleClick} to="/cart">Cart ({cartData.length})</Link>
                 {/* <Link to="/login">Login</Link> */}
-                <Link to="/signup"><button className='px-4 py-2 bg-black text-white text-xs font-extralight rounded-lg'>Sign Up</button></Link>
+                {
+                  userName ? 
+                  <p>Hi👋{userName}</p>:
+                  <Link to="/signup">
+                    <button className='px-4 py-2 bg-black text-white text-xs font-extralight rounded-lg'>
+                      Sign Up
+                      </button>
+                  </Link>
+                }
                 
             </ul>
         </div>

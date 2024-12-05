@@ -6,13 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../Redux/userSlice';
 const SignUp = () => {
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("test07@gmail.com")
+    const [password, setPassword] = useState("Zyan@123")
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const userdata = useSelector((store)=> store.user.userName)
-
-    
 
     useEffect(()=>{
         if(userdata){
@@ -23,9 +21,13 @@ const SignUp = () => {
     
 
     const handleSignUp = () =>{
-        dispatch(addUser(email))
-        createUserWithEmailAndPassword(auth, email, password) 
-        navigate("/")
+        try{
+            dispatch(addUser(email))
+            createUserWithEmailAndPassword(auth, email, password) 
+            navigate("/")
+        }catch(err){
+            console.log(err);
+        }
     }
 
   return (
@@ -50,13 +52,12 @@ const SignUp = () => {
                         Password
                     </label>
                     <input value={password} onChange={(e)=> setPassword(e.target.value)}  className="shadow appearance-none rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-                    {/* <p className="text-red-500 text-xs italic">Please choose a password.</p> */}
                     </div>
                     <div className="flex items-center justify-between">
-                    <button onClick={handleSignUp} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                       Sign Up
-                    </button>
-                </div>
+                        <button onClick={handleSignUp} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Sign Up
+                        </button>
+                    </div>
             </form>
             <p className="text-center text-gray-500 text-xs">
                 &copy;2020 Acme Corp. All rights reserved.

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { CARTIMG, NOITEMSCART } from '../utils/constant'
 import CartItem from './CartItem'
 import { useDispatch, useSelector } from 'react-redux'
@@ -9,6 +9,8 @@ import toast from 'react-hot-toast'
 
 const Card = () => {
     const data = useSelector(store=> store.cart.items)
+    const userData = useSelector((store)=> store.user.userName)
+    const navigate = useNavigate()
     const [prices, setPrices] = useState(0)
     const [pay, setPay] = useState(false)
     const dispatch = useDispatch()
@@ -25,12 +27,17 @@ const Card = () => {
     }, [data])
 
     const handlePay = ()=>{
-        const toastId = toast.loading("Loading...");
-        setTimeout(() => {
-            toast.dismiss(toastId);
-            toast.success("Payment successfully");
-            dispatch(clearCart())
-        }, 2000);
+        if(!userData){
+            navigate("/signup")
+        }
+        else{
+            const toastId = toast.loading("Loading...");
+            setTimeout(() => {
+                toast.dismiss(toastId);
+                toast.success("Payment successfully");
+                dispatch(clearCart())
+            }, 2000);
+        }
     }
 
   return (

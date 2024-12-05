@@ -1,8 +1,9 @@
 import React from 'react'
 import { STAR } from '../utils/constant'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../Redux/cartSlice'
 import toast from 'react-hot-toast'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({data}) => {
     const dispatch = useDispatch()
